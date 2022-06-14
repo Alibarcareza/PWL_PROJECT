@@ -7,7 +7,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{ route('HomePage')}}"><b>Toko</b>Fast</a>
+    <a href="{{ route('HomePage')}}"><b>OPA GANENDRA GIRI</b></a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
