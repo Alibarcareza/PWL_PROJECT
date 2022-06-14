@@ -15,7 +15,7 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function register(Request $request)
     {
         $this->validate($request, [
             'name' => 'required',
@@ -32,8 +32,8 @@ class RegisterController extends Controller
         $user->password = bcrypt($request->password);
         $user->level = 'user';
         $img = \DefaultProfileImage::create($request->name, 256, '#000', '#FFF');
-            Storage::disk('public')->put("profile.png", $img -> encode());
-        $user->foto = 'profile.png';
+            Storage::disk('public')->put("profile.jpg", $img -> encode());
+        $user->foto = 'profile.jpg';
         $user->save();
 
         return redirect('/login')->with('success', 'Registration Success! Please Login');
