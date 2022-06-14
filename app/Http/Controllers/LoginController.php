@@ -13,11 +13,11 @@ class LoginController extends Controller
             
             $user = Auth::user();
             if ($user->level == 'admin') {
-                return redirect()->route('HomePageAdmin');
+                return view('ViewAdmin.index');
             } 
 
             if ($user->level == 'user') {
-                return redirect()->route('HomePage');
+                return view('home');
             } 
         }
         return back()->with('loginError', 'Login Failed!');
@@ -26,6 +26,6 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         Auth::logout();
-        return redirect()->route('HomePage');
+        return view('home');
     }
 }
