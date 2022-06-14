@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', function () { return view('Loginpage.login', ['tittle' => 'Login Page']); }) -> name('LoginPage');
+    Route::post('/postlogin', [LoginController::class, 'login']) -> name('login');
+    Route::post('/postregister', [RegisterController::class, 'store']) -> name('register');
+    Route::get('/register',[RegisterController::class, 'index'])->name('RegisterPage');
+});
