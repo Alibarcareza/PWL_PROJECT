@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomePageController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Middleware\CekLevel;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +21,7 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::post('/logout', [LoginController::class, 'logout']) -> name('logout');
 
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', function () { return view('AuthPage.login', ['tittle' => 'Login Page']); }) -> name('LoginPage');
@@ -25,6 +30,8 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/register', function () { return view('AuthPage.register', ['tittle' => 'Register Page']); }) -> name('RegisterPage');
 });
 
-Route::middleware(['auth','cekLevel:user'])->group(function () {
+Route::get('/Profile', [HomePageController::class, 'profile'])->name('ProfilePage');
+
+Route::middleware(['middleware' => 'cekLevel:user'])->group(function () {
     Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
 });

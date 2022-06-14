@@ -24,6 +24,17 @@ class UserSeeder extends Seeder
                 'foto' => 'admin.jpg',
                 'password' => bcrypt('admin123'),
                 'created_at' => now(),
+            ],
+
+            [
+                'name' => 'Ali',
+                'email' => 'ali@gmail.com',
+                'level' => 'user',
+                'notelp' => '08956305431276',
+                'alamat' => 'Malang',
+                'foto' => 'admin.jpg',
+                'password' => bcrypt('ali123'),
+                'created_at' => now(),
             ]
         ]);
     }

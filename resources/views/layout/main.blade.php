@@ -55,8 +55,7 @@
             <li><a href="{{ route('RegisterPage') }}">Register</a></li>
             @else
             <li><a href="{{ url('/home') }}">Home</a></li>
-            <li><a href="{{ url('/anggota') }}">Profile</a></li>
-            <li><a href="{{ url('/angkatan') }}">Angkatan</a></li>
+            <li><a href="{{ route('ProfilePage') }}">Profile</a></li>
             @endguest
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
