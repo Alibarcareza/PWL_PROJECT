@@ -31,9 +31,6 @@ class RegisterController extends Controller
         $user->notelp = $request->nomor;
         $user->password = bcrypt($request->password);
         $user->level = 'user';
-        $img = \DefaultProfileImage::create($request->name, 256, '#000', '#FFF');
-            Storage::disk('public')->put("profile.jpg", $img -> encode());
-        $user->foto = 'profile.jpg';
         $user->save();
 
         return redirect('/login')->with('success', 'Registration Success! Please Login');
