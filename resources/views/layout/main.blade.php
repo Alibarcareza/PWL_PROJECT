@@ -54,7 +54,7 @@
             <li><a href="{{ route('LoginPage') }}">Login</a></li>
             <li><a href="{{ route('RegisterPage') }}">Register</a></li>
             @else
-            <li><a href="{{ url('/home') }}">Home</a></li>
+            <li><a href="{{ route('HomePageAdmin') }}">Home Admin</a></li>
             <li><a href="{{ route('ProfilePage') }}">Profile</a></li>
             @endguest
           </ul>

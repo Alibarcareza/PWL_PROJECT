@@ -40,7 +40,7 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
 });
 
 Route::middleware(['auth','cekLevel:admin'])->group(function () {
-    Route::get('/home', [AdminController::class, 'index']) -> name('HomePageAdmin');
+    Route::get('/homeAdmin', [AdminController::class, 'index']) -> name('HomePageAdmin');
     Route::get('/createUser', [AdminController::class, 'createUser']) -> name('CreateUser');
     Route::post('/postCreateUser', [AdminController::class, 'storeUser']) -> name('PostCreateUser');
 });
