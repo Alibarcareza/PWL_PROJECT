@@ -215,7 +215,7 @@ $(document).ready(function(){
                         <td><span class="status text-success">&bull;</span> Tersedia</td>
                         <td>
                         <a href="{{ route('EditAlat', $da->id) }}" class="btn btn-md btn-warning">Edit</a>  
-
+                        <a href="{{ route('DeleteAlat', $da->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">Delete</a>
                         </td>
                     </tr>
                 </tbody>
