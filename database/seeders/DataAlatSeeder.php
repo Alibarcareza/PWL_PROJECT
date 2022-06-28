@@ -20,14 +20,14 @@ class DataAlatSeeder extends Seeder
                 'kategori' => 'Gunung Rimba',
                 'merk' => 'consina',
                 'jumlah' => '5',
-                'gambar' =>'img/alat/alat1.jpg',
+                'gambar' =>'assets/img/alat/alat1.jpg',
             ],
             [
                 'nama' => 'carrier 80L',
                 'kategori' => 'Gunung Rimba',
                 'merk' => 'eiger',
                 'jumlah' => '4',
-                'gambar' =>'img/alat/alat2.jpg',
+                'gambar' =>'assets/img/alat/alat2.jpg',
             ]
         ]);
     }

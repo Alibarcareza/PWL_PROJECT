@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use PDF;
 use App\Models\User;
+use App\Models\alat;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Query\Builder;
 
@@ -51,4 +52,11 @@ class AdminController extends Controller
         return redirect('/homeAdmin') -> with('success', 'Data berhasil Ditambahkan');
     }
     
+    function dataAlat()
+    {
+        $dataAlat = alat::orderBy('id', 'asc')->paginate(5);
+        return view('ViewAdmin.dataAlat',['tittle' => 'Data Alat',
+            'dataAlat' => $dataAlat,
+        ]);
+    }
 }
