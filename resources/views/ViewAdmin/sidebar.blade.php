@@ -35,52 +35,13 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="{{ route('HomePageAdmin') }} " class="nav-link {{ ($tittle === "Home Page Admin") ? 'active' : ''}}">
+            <a href="{{ route('HomePageAdmin') }} " class="nav-link">
             <i class="bi bi-people-fill"></i>
               <p>
                 Data Pengguna
               </p>
             </a>
-          </li>
-          <li class="nav-item">
-          <a href="{{ route('ProfilePageAdmin') }} " class="nav-link {{ ($tittle === "Profile Page") ? 'active' : ''}}">
-          <i class="bi bi-person-badge"></i>
-              <p>Profile</p>
-            </a>
-          </li>
-         
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-            <i class="bi bi-clipboard2-data"></i>
-              <p>
-              Database Toko
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('DataProductPage') }}" class="nav-link {{ ($tittle === "Data Product") ? 'active' : ''}}"">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Data Product</p>
-                </a>
-              </li>
-              <li class="nav-item">
-              <a href="{{ route('DataPenjualanPage') }}" class="nav-link {{ ($tittle === "Data Penjualan") ? 'active' : ''}}"">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Data Penjualan</p>
-                </a>
-              </li>
-              <li class="nav-item">
-              <a href="{{ route('DataSupplierPage') }}" class="nav-link {{ ($tittle === "Data Supplier") ? 'active' : ''}}"">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Data Suplier</p>
-                </a>
-              </li>
-              
-            </ul>
-          </li>
-      
-          
+          </li>          
           <li class="nav-item bg-danger">
             <a href="{{ route('logout') }}" class="nav-link">
               <i class="bi bi-box-arrow-in-left"></i>
