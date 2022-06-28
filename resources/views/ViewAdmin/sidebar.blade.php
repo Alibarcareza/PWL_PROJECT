@@ -43,10 +43,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="{{ route('DataBarang') }} " class="nav-link">
+            <a href="{{ route('DataAlatPage') }} " class="nav-link">
             <i class="bi bi-people-fill"></i>
               <p>
-                Data Barang
+                Data Alat
               </p>
             </a>
           </li>          
