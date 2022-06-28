@@ -92,5 +92,11 @@ class AlatController extends Controller
                 return redirect('/dataAlat')->with('success', 'Data Berhasil Diubah');
             }
     }
+
+    public function destroyAlat($id)
+    {
+        Alat::where('id', $id)->delete();
+        return redirect('/dataAlat')-> with('success', 'Data  Berhasil Dihapus');
+    }
    
 }
