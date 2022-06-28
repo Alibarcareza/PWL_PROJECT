@@ -46,5 +46,11 @@ class AlatController extends Controller
 
         return redirect('/homeAdmin') -> with('success', 'Data Barang berhasil Ditambahkan');
     }
+    function cetakDataAlat()
+    {
+        $dataAlat = Alat::get();
+        $pdf = PDF::loadView('ViewAdmin.cetakDataAlat',['dataAlat' => $dataAlat]);
+        return $pdf->download('Data Alat.pdf');
+    }
    
 }
