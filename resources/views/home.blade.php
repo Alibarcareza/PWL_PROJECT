@@ -61,7 +61,7 @@
                 </center>
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0">
-                <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
+                <h3>test</h3>
             </div>
           </div>
           <hr>
@@ -72,7 +72,7 @@
         <div class="container">
           <div class="row content">
             <div class="col-lg-6">
-                <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assum perenda sruen jonee trave</h3>
+                <h3>test</h3>
             </div>
             <div class="col-lg-6 pt-4 pt-lg-0">
                 <center>
