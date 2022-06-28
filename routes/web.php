@@ -50,7 +50,7 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/createAlat', [AlatController::class, 'createAlat']) -> name('CreateAlat');
     Route::post('/postCreateAlat', [AlatController::class, 'storeAlat']) -> name('PostCreateAlat');
     Route::get('/editAlat/{id}', [AlatController::class, 'editAlat']) -> name('EditAlat');
-    Route::post('/updateAlat/{id}', [AlattController::class, 'updateDataAlat']) -> name('UpdateAlat');
+    Route::post('/updateAlat/{id}', [AlatController::class, 'updateDataAlat']) -> name('UpdateAlat');
     Route::get('/deleteAlat/{id}', [AlatController::class, 'destroyAlat']) -> name('DeleteAlat');
     Route::get('/printAlat', [AlatController::class, 'cetakDataAlat']) -> name('CetakDataAlat');
 });

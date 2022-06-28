@@ -214,7 +214,7 @@ $(document).ready(function(){
                         <td><img src="{{ asset( 'storage/'.$da->gambar) }}" width="100px" height="100px"></td>
                         <td><span class="status text-success">&bull;</span> Tersedia</td>
                         <td>
-                           
+                        <a href="{{ route('EditAlat', $da->id) }}" class="btn btn-md btn-warning">Edit</a>  
 
                         </td>
                     </tr>
