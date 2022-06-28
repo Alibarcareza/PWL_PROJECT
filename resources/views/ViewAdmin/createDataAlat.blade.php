@@ -32,22 +32,15 @@
                     </div>
                     @enderror
                 </div>
+
                 <div class="form-group">
-                <label for="alat">Alat</label>
-                <input type="text" name="alat" class="form-control @error('alat') is-invalid @enderror" placeholder="Nama Alat" required autofocus>
-                @error('alat')
+                    <label for="nama">Nama</label>
+                    <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" placeholder="Nama" required >
+                    @error('nama')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
-                @enderror
-                </div>
-                <div class="form-group">
-                    <label for="nama">Nama</label>
-                    <select name="nama" class="form-control">
-                        @foreach ($nama as $nama) 
-                            <option value="{{ $nama ->id }}">{{ $nama->nama }}</option>    
-                        @endforeach
-                    </select>
+                    @enderror
                 </div>
 
 
@@ -72,13 +65,14 @@
 
                 <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="jumlah">Stok</label>
-                    <input type="stok" name="jumlah" class="form-control @error('jumlah') is-invalid @enderror" placeholder="jumlah" required >
+                    <label for="jumlah">Jumlah</label>
+                    <input type="jumlah" name="jumlah" class="form-control @error('jumlah') is-invalid @enderror" placeholder="jumlah" required >
                     @error('jumlah')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
                     @enderror
+                    </div>
                 </div>
                 
                 <div class="form-group float-right">

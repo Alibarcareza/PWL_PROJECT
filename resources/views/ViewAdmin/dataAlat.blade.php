@@ -185,7 +185,7 @@ $(document).ready(function(){
                         <h2>Alat <b>Management</b></h2>
                     </div>
                     <div class="col-sm-7">
-            						
+                    <a href="{{route('CreateAlat')}}" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Alat</span></a>
                     </div>
                 </div>
             </div>
