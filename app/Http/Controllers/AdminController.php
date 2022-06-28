@@ -50,4 +50,5 @@ class AdminController extends Controller
 
         return redirect('/homeAdmin') -> with('success', 'Data berhasil Ditambahkan');
     }
+    
 }

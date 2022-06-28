@@ -41,9 +41,18 @@
                 Data Pengguna
               </p>
             </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('DataBarang') }} " class="nav-link">
+            <i class="bi bi-people-fill"></i>
+              <p>
+                Data Barang
+              </p>
+            </a>
           </li>          
           <li class="nav-item bg-danger">
-            <a href="{{ route('logout') }}" class="nav-link">
+            <a action="{{ route('logout') }}" method="POST" class="nav-link">
+            @csrf
               <i class="bi bi-box-arrow-in-left"></i>
               <p>Logout</p>
             </a>
