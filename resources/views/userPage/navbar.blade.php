@@ -9,15 +9,6 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ route('HomePage') }} " class="nav-link {{ ($tittle === "Home Page") ? 'active' : ''}}" class="nav-link">Home</a>
       </li>
-      <div class="dropdown">
-        <button class="btn b dropdown-toggle" type="" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-          Shop
-        </button>
-          <div class="dropdown-menu">
-            
-
-          </div>
-        </div>
       
       <li class="nav-item d-none d-sm-inline-block">
       
