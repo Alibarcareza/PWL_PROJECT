@@ -44,8 +44,11 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/homeAdmin', [AdminController::class, 'index']) -> name('HomePageAdmin');
     Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
     Route::get('/dataAlat', [AdminController::class, 'dataAlat']) -> name('DataAlatPage');
+    
     Route::get('/createUser', [AdminController::class, 'createUser']) -> name('CreateUser');
     Route::post('/postCreateUser', [AdminController::class, 'storeUser']) -> name('PostCreateUser');
+    Route::get('/editUser/{id}', [AdminController::class, 'editUser']) -> name('EditUser');
+    Route::get('/deleteUser/{id}', [AdminController::class, 'destroyUser']) -> name('DeletePengguna');
 
     Route::get('/createAlat', [AlatController::class, 'createAlat']) -> name('CreateAlat');
     Route::post('/postCreateAlat', [AlatController::class, 'storeAlat']) -> name('PostCreateAlat');

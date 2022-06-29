@@ -32,7 +32,55 @@
     
       
       <!-- /.card-header -->
-    
+      <div class="card-body" style="overflow-x:auto;">
+        <table id="example1" class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>Foto</th>
+            <th>Nama</th>
+            <th>Email</th>
+            <th>Nomor Telepon</th>
+            <th>Alamat</th>
+            <th>Dibuat pada tanggal</th>
+            <th>Role Akun</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+            @foreach ($dataUser as $member)
+          <tr>
+            <td>{{ $member->id}}</td>
+            <td>
+              <img src="{{ asset('storage/'. $member->foto)}}" class="img-fluid img-thumbnail" style="width: 60px; margin-top: -6px;">
+            </td>
+            <td>{{ $member->name}}</td>
+            <td>{{ $member->email}}</td>
+            <td>{{ $member->notelp}}</td>
+            <td>{{ $member->alamat}}</td>
+            <td>{{ $member->created_at}}</td>
+            <td>{{ $member->level}}</td>
+            <td>
+              <!-- Button trigger modal -->
+            
+              <a href="{{ route('EditUser', $member->id) }}" class="btn btn-md btn-info">Edit</a>
+        
+          <a href="{{ route('DeletePengguna', $member->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">
+            Delete
+          </a>
+        </td>
+          
+            </td>
+          </tr>
+          @endforeach
+          </tfoot>
+        </table>
+        
+        <br>
+        {{ $dataUser->links() }}
+        Jumlah data User : {{ $dataUser->total() }} <br>
+        Data per Halaman : {{ $dataUser->perPage() }} </br>
+      </div>
       <!-- /.card-body -->
     </div>
     <!-- /.card -->

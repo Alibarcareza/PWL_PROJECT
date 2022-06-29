@@ -14,7 +14,9 @@ class AdminController extends Controller
 {
     function index()
     {
-        return view('ViewAdmin.index',['tittle' => 'Home Page Admin']);
+        $dataUser = User::orderBy('level', 'asc')->where('level', 'user')->paginate(2);
+        return view('ViewAdmin.index',['tittle' => 'Home Page Admin',
+        'dataUser' => $dataUser,]);
     }
 
     public function createUser()
