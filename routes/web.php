@@ -6,6 +6,7 @@ use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AlatController;
 
 
@@ -39,6 +40,7 @@ Route::get('/Profile', [HomePageController::class, 'profile'])->name('ProfilePag
 
 Route::middleware(['auth','cekLevel:user'])->group(function () {
     Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
+    Route::get('/peminjamanAlat', [UserController::class, 'index']) -> name('PeminjamanAlat');
 });
 
 Route::middleware(['auth','cekLevel:admin'])->group(function () {
