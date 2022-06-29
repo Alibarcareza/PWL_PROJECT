@@ -41,6 +41,7 @@ Route::get('/Profile', [HomePageController::class, 'profile'])->name('ProfilePag
 Route::middleware(['auth','cekLevel:user'])->group(function () {
     Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
     Route::get('/peminjamanAlat', [UserController::class, 'index']) -> name('PeminjamanAlat');
+    Route::get('/peminjamanAlat/{id}', [UserController::class, 'pinjam']) -> name('PinjamAlat');
 });
 
 Route::middleware(['auth','cekLevel:admin'])->group(function () {

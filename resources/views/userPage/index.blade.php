@@ -15,7 +15,59 @@
 
       <!-- Featured Section Begin -->
     <!-- Featured Section End -->
+    <div class="container-xl">
+    <div class="table-responsive">
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <h2>List Alat<b></b></h2>
+                    </div>
+                    <div class="col-sm-7">
+                    
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nama</th>						
+                        <th>Kategori</th>
+                        <th>Merk</th>
+                        <th>Jumlah</th>
+                        <th>Gambar</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                @foreach ($dataAlat as $da)
+                <tbody>
+                    <tr>
+                        <td>{{ $da->id}}</td>
+                        <td>{{ $da->nama}}</td>
+                        <td>{{ $da->kategori}}</td>
+                        <td>{{ $da->merk}}</td>
+                        <td>{{ $da->jumlah}}</td>
+                        <td><img src="{{ asset( 'storage/'.$da->gambar) }}" width="100px" height="100px"></td>
+                        <td><span class="status text-success">&bull;</span> Tersedia</td>
+                        <td>
+                        <a href="{{ route('PinjamAlat', $da->id) }}" class="btn btn-md btn-warning">Pinjam Alat</a>
+                        </td>
+                    </tr>
+                </tbody>
+                @endforeach
+            </table>
+            <br>
+            {{ $dataAlat->links() }}
+            Jumlah data Product : {{ $dataAlat->total() }} <br>
+            Data per Halaman : {{ $dataAlat->perPage() }} </br>
+            </br>
 
+        </div>
+    </div>
+</div> 
+    
     <section>
     <div class="card card-primary card-outline">
     <div class="card-body text-white bg-info">

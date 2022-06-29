@@ -11,8 +11,15 @@ class UserController extends Controller
 {
     function index()
     {
-        $data = Alat::all();
-        return view('userPage.index',['alat' => $data],['tittle' => 'Home Page',
+        $dataAlat = alat::orderBy('id', 'asc')->paginate(5);
+        return view('userPage.index',['tittle' => 'Data Alat',
+            'dataAlat' => $dataAlat,
         ]);
+    }
+    function cetakSurat()
+    {
+        $dataAlat = Alat::where('id');
+        $pdf = PDF::loadView('ViewAdmin.cetakDataAlat',['dataAlat' => $dataAlat]);
+        return $pdf->download('Data Alat.pdf');
     }
 }
