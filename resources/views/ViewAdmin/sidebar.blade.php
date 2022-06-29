@@ -51,8 +51,7 @@
             </a>
           </li>          
           <li class="nav-item bg-danger">
-            <a action="{{ route('logout') }}" method="POST" class="nav-link">
-            @csrf
+            <a href="{{ route('logout2') }}" class="nav-link">
               <i class="bi bi-box-arrow-in-left"></i>
               <p>Logout</p>
             </a>

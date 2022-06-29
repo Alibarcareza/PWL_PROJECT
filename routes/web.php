@@ -24,6 +24,7 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/logout', [LoginController::class, 'logout']) -> name('logout2');
 Route::post('/logout', [LoginController::class, 'logout']) -> name('logout');
 
 Route::middleware(['guest'])->group(function () {
