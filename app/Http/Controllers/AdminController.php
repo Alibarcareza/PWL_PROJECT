@@ -95,6 +95,13 @@ class AdminController extends Controller
         }
 
     }
+
+    function destroyUser($id)
+    {
+        $data = User::find($id);
+        $data->delete();
+        return redirect('/homeAdmin');
+    }
     
     function dataAlat()
     {
