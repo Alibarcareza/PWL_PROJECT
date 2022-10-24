@@ -19,7 +19,7 @@ class CreateDataAlat extends Migration
                 $table->string ('kategori',100);
                 $table->string ('merk',100);
                 $table->integer ('jumlah');
-                $table->string ('gambar',100);
+                $table->string ('gambar',100)->nullable();
                 $table->timestamps();
         });
     }

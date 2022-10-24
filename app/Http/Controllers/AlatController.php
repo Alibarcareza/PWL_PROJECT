@@ -28,7 +28,7 @@ class AlatController extends Controller
         'kategori' => ['required'],
         'merk' => ['required'],
         'jumlah' => 'required',
-        'gambar'=>'required',
+        //'gambar'=>'required',
         ]);
 
         if($request->file('gambar')){
@@ -37,8 +37,8 @@ class AlatController extends Controller
         
         $alat = new Alat;
         $alat -> nama = $request->get('nama');
-        $gambar = $request->file('gambar')->store('gambar', 'public');
-        $alat -> gambar = $gambar;
+       // $gambar = $request->file('gambar')->store('gambar', 'public');
+        //$alat -> gambar = $gambar;
         $alat -> kategori = $request->get('kategori');
         $alat -> merk = $request->get('merk');
         $alat -> jumlah = $request->get('jumlah');
@@ -70,19 +70,29 @@ class AlatController extends Controller
             'jumlah' => 'required',
             ]);
 
-            if($request -> hasFile('gambar')){
-                $alat = Alat::where('id', $id)->first();
-                // $alat -> id = $request->get('id');
-                $alat -> nama = $request->get('nama');
-                $gambar = $request->file('gambar')->store('gambar', 'public');
-                $alat -> gambar = $gambar;
-                $alat -> kategori = $request->get('kategori');
-                $alat -> merk = $request->get('merk');
-                $alat -> jumlah = $request->get('jumlah');
-                $alat->save();
-                return redirect('/dataAlat')->with('success', 'Data Berhasil Diubah');
-            } else {
-               $alat = Alat::where('id', $id)->first();
+            // if($request -> hasFile('gambar')){
+            //     $alat = Alat::where('id', $id)->first();
+            //     // $alat -> id = $request->get('id');
+            //     $alat -> nama = $request->get('nama');
+            //     $gambar = $request->file('gambar')->store('gambar', 'public');
+            //     $alat -> gambar = $gambar;
+            //     $alat -> kategori = $request->get('kategori');
+            //     $alat -> merk = $request->get('merk');
+            //     $alat -> jumlah = $request->get('jumlah');
+            //     $alat->save();
+            //     return redirect('/dataAlat')->with('success', 'Data Berhasil Diubah');
+            // } else {
+            //    $alat = Alat::where('id', $id)->first();
+            //     // $product -> id = $request->get('id');
+            //     $alat -> nama = $request->get('nama');
+            //     $alat -> kategori = $request->get('kategori');
+            //     $alat -> merk = $request->get('merk');
+            //     $alat -> jumlah = $request->get('jumlah');
+            //     $alat->save();
+            //     return redirect('/dataAlat')->with('success', 'Data Berhasil Diubah');
+            // }
+
+            $alat = Alat::where('id', $id)->first();
                 // $product -> id = $request->get('id');
                 $alat -> nama = $request->get('nama');
                 $alat -> kategori = $request->get('kategori');
@@ -90,7 +100,6 @@ class AlatController extends Controller
                 $alat -> jumlah = $request->get('jumlah');
                 $alat->save();
                 return redirect('/dataAlat')->with('success', 'Data Berhasil Diubah');
-            }
     }
 
     public function destroyAlat($id)
