@@ -28,7 +28,7 @@ class AlatController extends Controller
         'kategori' => ['required'],
         'merk' => ['required'],
         'jumlah' => 'required',
-        //'gambar'=>'required',
+        'gambar'=>'required',
         ]);
 
         if($request->file('gambar')){
@@ -37,8 +37,8 @@ class AlatController extends Controller
         
         $alat = new Alat;
         $alat -> nama = $request->get('nama');
-       // $gambar = $request->file('gambar')->store('gambar', 'public');
-        //$alat -> gambar = $gambar;
+        $gambar = $request->file('gambar')->store('gambar', 'public');
+        $alat -> gambar = $gambar;
         $alat -> kategori = $request->get('kategori');
         $alat -> merk = $request->get('merk');
         $alat -> jumlah = $request->get('jumlah');
