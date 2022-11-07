@@ -44,7 +44,7 @@ class AlatController extends Controller
         $alat -> jumlah = $request->get('jumlah');
         $alat -> save();
 
-        return redirect('/homeAdmin') -> with('success', 'Data Barang berhasil Ditambahkan');
+        return redirect('/dataAlat') -> with('success', 'Data Barang berhasil Ditambahkan');
     }
     function cetakDataAlat()
     {
