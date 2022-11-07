@@ -70,27 +70,27 @@ class AlatController extends Controller
             'jumlah' => 'required',
             ]);
 
-            // if($request -> hasFile('gambar')){
-            //     $alat = Alat::where('id', $id)->first();
-            //     // $alat -> id = $request->get('id');
-            //     $alat -> nama = $request->get('nama');
-            //     $gambar = $request->file('gambar')->store('gambar', 'public');
-            //     $alat -> gambar = $gambar;
-            //     $alat -> kategori = $request->get('kategori');
-            //     $alat -> merk = $request->get('merk');
-            //     $alat -> jumlah = $request->get('jumlah');
-            //     $alat->save();
-            //     return redirect('/dataAlat')->with('success', 'Data Berhasil Diubah');
-            // } else {
-            //    $alat = Alat::where('id', $id)->first();
-            //     // $product -> id = $request->get('id');
-            //     $alat -> nama = $request->get('nama');
-            //     $alat -> kategori = $request->get('kategori');
-            //     $alat -> merk = $request->get('merk');
-            //     $alat -> jumlah = $request->get('jumlah');
-            //     $alat->save();
-            //     return redirect('/dataAlat')->with('success', 'Data Berhasil Diubah');
-            // }
+            if($request -> hasFile('gambar')){
+                $alat = Alat::where('id', $id)->first();
+                // $alat -> id = $request->get('id');
+                $alat -> nama = $request->get('nama');
+                $gambar = $request->file('gambar')->store('gambar', 'public');
+                $alat -> gambar = $gambar;
+                $alat -> kategori = $request->get('kategori');
+                $alat -> merk = $request->get('merk');
+                $alat -> jumlah = $request->get('jumlah');
+                $alat->save();
+                return redirect('/dataAlat')->with('success', 'Data Berhasil Diubah');
+            } else {
+               $alat = Alat::where('id', $id)->first();
+                // $product -> id = $request->get('id');
+                $alat -> nama = $request->get('nama');
+                $alat -> kategori = $request->get('kategori');
+                $alat -> merk = $request->get('merk');
+                $alat -> jumlah = $request->get('jumlah');
+                $alat->save();
+                return redirect('/dataAlat')->with('success', 'Data Berhasil Diubah');
+            }
 
             $alat = Alat::where('id', $id)->first();
                 // $product -> id = $request->get('id');
