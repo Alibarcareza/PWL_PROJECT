@@ -49,6 +49,12 @@
                 Data Alat
               </p>
             </a>
+          </li>
+          <li class="nav-item">
+                <a href="{{ route('ProfilePage') }}" class="nav-link {{ ($tittle === "Profile Page") ? 'active' : ''}}">
+                <i class="bi bi-person-circle"></i>
+                  <p> Halaman Profile</p>
+                </a>
           </li>          
           <li class="nav-item bg-danger">
             <a href="{{ route('logout2') }}" class="nav-link">
