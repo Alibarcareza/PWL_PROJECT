@@ -12,7 +12,7 @@
                 {{ session('status') }}
             </div>
             @endif
-              <div class="card mt-3">
+              <div class="card mt-3 mx-auto" style="width: 500px">
                 <div class="card-body">
                     <ul class="list-group-flush">
                         <li class="list-group-item"><b>Nama: </b></li>
@@ -24,10 +24,10 @@
                         <li class="list-group-item"><b>Alamat: </b></li>
                         <li class="list-group-item">{{ auth()->user()->alamat }}</li>
                     </ul>
-                </div>
-                    <a style="width: 100px" class="btn btn-warning mb-3" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <a style="width: 100px; margin-left: 180px;" class="btn btn-warning mb-3" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                     </a>
+                </div>
                   <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                       @csrf
                   </form>
