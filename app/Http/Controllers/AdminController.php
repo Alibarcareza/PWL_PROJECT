@@ -110,4 +110,10 @@ class AdminController extends Controller
             'dataAlat' => $dataAlat,
         ]);
     }
+
+    function showProfile($id)
+    {
+        $user = User::find($id);
+        return view('profile', ['user' => $user]);
+    }
 }
