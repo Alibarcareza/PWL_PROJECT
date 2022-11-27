@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use PDF;
 use App\Models\User;
+use App\Models\PinjamAlat;
 use App\Models\alat;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Query\Builder;
@@ -115,5 +116,32 @@ class AdminController extends Controller
     {
         $user = User::find($id);
         return view('profile', ['user' => $user]);
+    }
+
+    function dataPeminjam()
+    {
+        $dataAlat = alat::get();
+        $pinjamAlat = PinjamAlat::orderBy('id', 'asc')->paginate(2);
+        return view('ViewAdmin.peminjam',['tittle' => 'Data Peminjam',
+        'pinjamAlat' => $pinjamAlat, 'dataAlat' => $dataAlat]);
+    }
+
+    public function cetakStruk($id)
+    {
+        $dataAlat = alat::get();
+        $dataStruk = PinjamAlat::where('id', $id)->get();
+        $pdf = PDF::loadView('ViewAdmin.cetakStruk',['dataStruk' => $dataStruk, 'dataAlat' => $dataAlat]);
+        return $pdf->download('Struk.pdf');
+    }
+
+    function pengembalianAlat($id)
+    {
+        $data = PinjamAlat::find($id);
+        $dataAlat = alat::where('id', $data->fk_id_alat)->first();
+        $dataAlat->jumlah = $dataAlat->jumlah + $data->jumlah;
+        $dataAlat->save();
+
+        $data->delete();
+        return redirect('/dataPeminjam');
     }
 }

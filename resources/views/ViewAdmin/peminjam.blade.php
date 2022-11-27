@@ -182,11 +182,11 @@ $(document).ready(function(){
             <div class="table-title">
                 <div class="row">
                     <div class="col-sm-5">
-                        <h2>Alat <b>Management</b></h2>
+                        <h2>Data Peminjam</h2>
                     </div>
                     <div class="col-sm-7">
-                    <a href="{{route('CreateAlat')}}" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Alat</span></a>
-                    <a href="{{ route('CetakDataAlat') }}" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to PDF</span></a>
+                    {{-- <a href="{{route('CreateAlat')}}" class="btn btn-secondary"><i class="material-icons">&#xE147;</i> <span>Add New Alat</span></a> --}}
+                    <a href="" class="btn btn-secondary"><i class="material-icons">&#xE24D;</i> <span>Export to PDF</span></a>
                     </div>
                 </div>
             </div>
@@ -194,38 +194,46 @@ $(document).ready(function(){
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>KTP</th>
                         <th>Nama</th>						
-                        <th>Kategori</th>
-                        <th>Merk</th>
+                        <th>Alamat</th>
+                        <th>No. HP</th>
+                        <th>Alat</th>
                         <th>Jumlah</th>
-                        <th>Gambar</th>
-                        <th>Status</th>
+                        <th>Tanggal Peminjaman</th>
+                        <th>Tanggal Pengembalian</th>
+                        <th>Surat Peminjaman</th>
                         <th>Action</th>
                     </tr>
                 </thead>
-                @foreach ($dataAlat as $da)
+                @foreach ($pinjamAlat as $pa)
                 <tbody>
                     <tr>
-                        <td>{{ $da->id}}</td>
-                        <td>{{ $da->nama}}</td>
-                        <td>{{ $da->kategori}}</td>
-                        <td>{{ $da->merk}}</td>
-                        <td>{{ $da->jumlah}}</td>
-                        <td><img src="{{ asset( 'storage/'.$da->gambar) }}" width="100px" height="100px"></td>
-                        <td><span class="status text-success">&bull;</span> Tersedia</td>
+                        <td>{{ $pa->id}}</td>
+                        <td><img src="{{ asset( 'storage/'.$pa->ktp) }}" width="100px" height="100px"></td>
+                        <td>{{ $pa->nama}}</td>
+                        <td>{{ $pa->alamat}}</td>
+                        <td>{{ $pa->no_hp}}</td>
+                        @foreach ($dataAlat as $da)
+                        <td>{{ $da->nama }}</td>
+                        @endforeach
+                        <td>{{ $pa->jumlah}}</td>
+                        <td>{{ $pa->tanggal_peminjaman}}</td>
+                        <td>{{ $pa->tanggal_pengembalian}}</td>
+                        <td><img src="{{ asset( 'storage/'.$pa->surat) }}" width="100px" height="100px"></td>
                         <td>
-                        <a href="{{ route('EditAlat', $da->id) }}" class="btn btn-md btn-warning mb-2">Edit</a>  
-                        <a href="{{ route('DeleteAlat', $da->id) }}" class="btn btn-md btn-danger" onclick="return confirm('Anda Yakin Ingin Menghapus Data Ini?');">Delete</a>
+                        <a href="{{ route('Pengembalian', $pa->id) }}" class="btn btn-md btn-warning mb-2">Kembalikan</a>  
+                        <a href="{{ route('Print', $pa->id) }}" class="btn btn-md btn-primary">Cetak</a>
                         </td>
                     </tr>
                 </tbody>
                 @endforeach
             </table>
-            <br>
+            {{-- <br>
             {{ $dataAlat->links() }}
             Jumlah data Product : {{ $dataAlat->total() }} <br>
             Data per Halaman : {{ $dataAlat->perPage() }} </br>
-            </br>
+            </br> --}}
 
         </div>
     </div>

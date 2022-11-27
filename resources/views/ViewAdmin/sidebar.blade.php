@@ -55,6 +55,12 @@
                 <i class="bi bi-person-circle"></i>
                   <p> Halaman Profile</p>
                 </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('DataPeminjamPage') }}" class="nav-link {{ ($tittle === "Data Peminjam") ? 'active' : ''}}">
+            <i class="bi bi-person-circle"></i>
+              <p>Data Peminjam</p>
+            </a>
           </li>          
           <li class="nav-item bg-danger">
             <a href="{{ route('logout2') }}" class="nav-link">

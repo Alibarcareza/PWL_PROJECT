@@ -39,15 +39,17 @@ Route::get('/Profile', [HomePageController::class, 'profile'])->name('ProfilePag
 
 
 Route::middleware(['auth','cekLevel:user'])->group(function () {
-    Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
+    Route::get('/', [HomePageController::class, 'index']) -> name('HomePage');
     Route::get('/peminjamanAlat', [UserController::class, 'index']) -> name('PeminjamanAlat');
     Route::get('/peminjamanAlat/{id}', [UserController::class, 'pinjam']) -> name('PinjamAlat');
+    Route::post('/postPeminjamanAlat', [UserController::class, 'pinjamAlat']) -> name('PostPinjamAlat');
 });
 
 Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/homeAdmin', [AdminController::class, 'index']) -> name('HomePageAdmin');
     // Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
     Route::get('/dataAlat', [AdminController::class, 'dataAlat']) -> name('DataAlatPage');
+    Route::get('/dataPeminjam', [AdminController::class, 'dataPeminjam']) -> name('DataPeminjamPage');
 
     Route::get('/createUser', [AdminController::class, 'createUser']) -> name('CreateUser');
     Route::post('/postCreateUser', [AdminController::class, 'storeUser']) -> name('PostCreateUser');
@@ -61,4 +63,7 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::post('/updateAlat/{id}', [AlatController::class, 'updateDataAlat']) -> name('UpdateAlat');
     Route::get('/deleteAlat/{id}', [AlatController::class, 'destroyAlat']) -> name('DeleteAlat');
     Route::get('/printAlat', [AlatController::class, 'cetakDataAlat']) -> name('CetakDataAlat');
+
+    Route::get('/printStruk/{id}', [AdminController::class, 'cetakStruk']) -> name('Print');
+    Route::get('/kembaliAlat/{id}', [AdminController::class, 'pengembalianAlat']) -> name('Pengembalian');
 });

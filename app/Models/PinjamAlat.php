@@ -4,16 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Supplier;
 
-
-class alat extends Model
+class PinjamAlat extends Model
 {
     use HasFactory;
-    protected $table = 'data_alat';
+    protected $table = 'pinjam_alat';
     protected $primarykey = 'id';
-    public function pinjamAlat()
+    public function alat()
     {
-        return $this->belongsToMany(PinjamAlat::class);
+        $this->hasOne(alat::class, 'fk_id_alat');
     }
 }

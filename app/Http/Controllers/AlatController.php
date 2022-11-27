@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\alat;
+use App\Models\PinjamAlat;
 use Auth;
 use PDF;
 use Illuminate\Support\Facades\Storage;
@@ -15,8 +16,7 @@ class AlatController extends Controller
     // create data alat
     public function createAlat()
     {
-        $tittle = 'Create Alat';
-        return view('ViewAdmin.createDataAlat',  ['tittle']);
+        return view('ViewAdmin.createDataAlat',  ['tittle' => 'Create Alat']);
 
     }
     // fungsi store data user
@@ -107,5 +107,37 @@ class AlatController extends Controller
         Alat::where('id', $id)->delete();
         return redirect('/dataAlat')-> with('success', 'Data  Berhasil Dihapus');
     }
-   
+    
+    // public function pinjamAlat(Request $request)
+    // {
+    //    //melakukan validasi data
+    //     $request->validate([
+    //     'ktp' => 'required',
+    //     'nama' => 'required',
+    //     'alamat' => 'required',
+    //     'no_hp' => 'required',
+    //     'nama_alat' => 'required',
+    //     'jumlah' => 'required',
+    //     'tanggal_peminjaman'=>'required',
+    //     'tanggal_pengembalian' => 'required',
+    //     ]);
+
+    //     if($request->file('ktp')){
+    //         $image_name = $request->file('ktp')->store('image', 'public');
+    //     }
+        
+    //     $pinjamAlat = new PinjamAlat;
+    //     $ktp = $request->file('ktp')->store('ktp', 'public');
+    //     $pinjamAlat -> ktp = $ktp;
+    //     $pinjamAlat -> nama = $request->get('nama');
+    //     $pinjamAlat -> alamat = $request->get('alamat');
+    //     $pinjamAlat -> no_hp = $request->get('no_hp');
+    //     $pinjamAlat -> nama_alat = $request->get('nama_alat');
+    //     $pinjamAlat -> jumlah = $request->get('jumlah');
+    //     $pinjamAlat -> tanggal_peminjaman = $request->get('tanggal_peminjaman');
+    //     $pinjamAlat -> tanggal_pengembalian = $request->get('tanggal_pengembalian');
+    //     $pinjamAlat -> save();
+
+    //     return redirect('/peminjamanAlat') -> with('success', 'Data Barang berhasil Ditambahkan');
+    // }
 }
