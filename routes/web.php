@@ -47,7 +47,7 @@ Route::middleware(['auth','cekLevel:user'])->group(function () {
 
 Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/homeAdmin', [AdminController::class, 'index']) -> name('HomePageAdmin');
-    // Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
+    Route::get('/home', [HomePageController::class, 'index']) -> name('HomePage');
     Route::get('/dataAlat', [AdminController::class, 'dataAlat']) -> name('DataAlatPage');
     Route::get('/dataPeminjam', [AdminController::class, 'dataPeminjam']) -> name('DataPeminjamPage');
 
@@ -67,3 +67,6 @@ Route::middleware(['auth','cekLevel:admin'])->group(function () {
     Route::get('/printStruk/{id}', [AdminController::class, 'cetakStruk']) -> name('Print');
     Route::get('/kembaliAlat/{id}', [AdminController::class, 'pengembalianAlat']) -> name('Pengembalian');
 });
+
+Route::get('/uploads', 'UploadsController@index')->name('uploads');
+Route::post('/save','UploadsController@store')->name('uploads.store');

@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('notelp')->unique();
             $table->string('alamat')->nullable();
             $table->string('foto')->nullable();
+            $table->string('fotoKTP')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

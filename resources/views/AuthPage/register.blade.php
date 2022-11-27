@@ -66,6 +66,21 @@
             </div>
           </div>
         </div>
+
+        <div class="input-group mb-3">
+          <form method="POST" action="{{ route('uploads.store') }}" enctype="multipart/form-data">
+                        @csrf
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Upload Foto KTP') }}</label>
+                            <div class="col-md-6">
+                                <input type="file" class="form-control" name="filename" required>
+                            </div>
+                        </div>
+          <div class="input-group-append">
+          </div>
+        </div>
+
+
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">

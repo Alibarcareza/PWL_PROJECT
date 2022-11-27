@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Uploads;
 use Illuminate\Http\Request;
 use Storage;
 
@@ -22,6 +23,7 @@ class RegisterController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|confirmed|min:8',
             'nomor' => 'required|unique:users,notelp',
+            'fotoKTP' => 'required',
         ]);
 
 
@@ -29,6 +31,7 @@ class RegisterController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->notelp = $request->nomor;
+        $user->fotoKTP = $request->fotoKTP;
         $user->password = bcrypt($request->password);
         $user->level = 'user';
         $user->save();
