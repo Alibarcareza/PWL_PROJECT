@@ -24,7 +24,7 @@
       @endif
       <p class="login-box-msg">Masukkan Data Diri Anda</p>
 
-      <form action="{{ route('register') }}" method="post">
+      <form action="{{ route('register') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="name" placeholder="Nama Lengkap">
@@ -66,36 +66,22 @@
             </div>
           </div>
         </div>
-
         <div class="input-group mb-3">
-          <form method="POST" action="{{ route('uploads.store') }}" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Upload Foto KTP') }}</label>
-                            <div class="col-md-6">
-                                {{-- <input type="file" class="form-control" name="fotoKTP" required> --}}
-                                <input type="file" id="image" class="form-control @error('fotoKTP') is-invalid @enderror" name="fotoKTP" accept="image/*">
-                                @error('fotoKTP')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                                @enderror
-                            </div>
-                            {{-- <div>
-                              <button type="submit" class="btn-primary">Upload</button>
-                            </div> --}}
-                        </div>
-                        <!-- <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Upload') }}
-                                </button>
-                            </div>
-                        </div> -->
+          <label for="">Upload Foto KTP</label>
+          <div>
+            <input type="file" id="image" class="form-control @error('fotoKTP') is-invalid @enderror" name="fotoKTP" accept="image/*">
+            @error('fotoKTP')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+          </div>
           <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fa fa-lock"></span>
+            </div>
           </div>
         </div>
-
 
         <div class="row">
           <div class="col-8">

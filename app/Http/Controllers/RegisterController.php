@@ -26,14 +26,17 @@ class RegisterController extends Controller
             'fotoKTP' => 'required',
         ]);
 
+        if($request->file('fotoKTP')){
+            $image_name = $request->file('fotoKTP')->store('image', 'public');
+        }
 
         $user = new User;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->notelp = $request->nomor;
         $user->password = bcrypt($request->password);
-        //  $fotoKTP = $request->file('fotoKTP')->store('fotoKTP', 'public');
-        $user->fotoKTP = $request->fotoKTP;
+        $fotoKTP = $request->file('fotoKTP')->store('fotoKTP', 'public');
+        $user -> fotoKTP = $fotoKTP;
         $user->level = 'user';
         $user->save();
 
