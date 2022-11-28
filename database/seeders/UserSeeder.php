@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
                 'notelp' => '0895630543858',
                 'alamat' => 'Malang',
                 'foto' => 'admin.jpg',
+                'fotoKTP' => 'admin.jpg',
                 'password' => bcrypt('admin123'),
                 'created_at' => now(),
             ],
@@ -33,6 +34,7 @@ class UserSeeder extends Seeder
                 'notelp' => '08956305431276',
                 'alamat' => 'Malang',
                 'foto' => 'admin.jpg',
+                'fotoKTP' => 'admin.jpg',
                 'password' => bcrypt('ali123'),
                 'created_at' => now(),
             ]

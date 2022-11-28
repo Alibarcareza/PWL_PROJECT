@@ -73,8 +73,17 @@
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Upload Foto KTP') }}</label>
                             <div class="col-md-6">
-                                <input type="file" class="form-control" name="filename" required>
+                                {{-- <input type="file" class="form-control" name="fotoKTP" required> --}}
+                                <input type="file" id="image" class="form-control @error('fotoKTP') is-invalid @enderror" name="fotoKTP" accept="image/*">
+                                @error('fotoKTP')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                                @enderror
                             </div>
+                            {{-- <div>
+                              <button type="submit" class="btn-primary">Upload</button>
+                            </div> --}}
                         </div>
           <div class="input-group-append">
           </div>

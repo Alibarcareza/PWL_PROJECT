@@ -42,6 +42,7 @@
             <th>Email</th>
             <th>Nomor Telepon</th>
             <th>Alamat</th>
+            <th>Foto KTP</th>
             <th>Dibuat pada tanggal</th>
             <th>Role Akun</th>
             <th>Action</th>
@@ -58,6 +59,9 @@
             <td>{{ $member->email}}</td>
             <td>{{ $member->notelp}}</td>
             <td>{{ $member->alamat}}</td>
+            <td>
+              <img src="{{ asset('storage/'. $member->fotoKTP)}}" class="img-fluid img-thumbnail" style="width: 60px; margin-top: -6px;">
+            </td>
             <td>{{ $member->created_at}}</td>
             <td>{{ $member->level}}</td>
             <td>
