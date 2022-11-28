@@ -85,6 +85,13 @@
                               <button type="submit" class="btn-primary">Upload</button>
                             </div> --}}
                         </div>
+                        <!-- <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Upload') }}
+                                </button>
+                            </div>
+                        </div> -->
           <div class="input-group-append">
           </div>
         </div>
