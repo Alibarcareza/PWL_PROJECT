@@ -22,15 +22,15 @@ use App\Http\Controllers\AlatController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('AuthPage.login', ['tittle' => 'Login Page']);
 });
 
 Route::get('/logout', [LoginController::class, 'logout']) -> name('logout2');
 Route::post('/logout', [LoginController::class, 'logout']) -> name('logout');
 
 Route::middleware(['guest'])->group(function () {
-    Route::get('/login', function () { return view('AuthPage.login', ['tittle' => 'Login Page']); }) -> name('LoginPage');
-    Route::post('/postlogin', [LoginController::class, 'login']) -> name('login');
+    Route::get('/login', function () { return view('AuthPage.login', ['tittle' => 'Login Page']); }) -> name('login');
+    Route::post('/postlogin', [LoginController::class, 'login']) -> name('postLogins');
     Route::post('/postregister', [RegisterController::class, 'register']) -> name('register');
     Route::get('/register', function () { return view('AuthPage.register', ['tittle' => 'Register Page']); }) -> name('RegisterPage');
 });

@@ -51,7 +51,7 @@
         <nav id="navbar" class="navbar">
             <ul>
             @guest
-            <li><a href="{{ route('LoginPage') }}">Login</a></li>
+            <li><a href="{{ route('login') }}">Login</a></li>
             <li><a href="{{ route('RegisterPage') }}">Register</a></li>
             @else
             <li><a href="{{ route('HomePageAdmin') }}">Home Admin</a></li>

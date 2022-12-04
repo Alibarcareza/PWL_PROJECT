@@ -10,7 +10,7 @@ class HomePageController extends Controller
 {
     function index()
     {
-        return view('home',['tittle' => 'Home Page']);
+        return view('welcome',['tittle' => 'Home Page']);
     }
     function profile()
     {

@@ -28,7 +28,7 @@
       @endif
       <p class="login-box-msg">Masuk Untuk Melanjutkan</p>
 
-      <form action="{{ route('login') }}" method="post">
+      <form action="{{ route('postLogins') }}" method="post">
         @csrf
         <div class="input-group mb-3">
           <input type="email" class="form-control" name="email" placeholder="Email">
