@@ -25,7 +25,8 @@
                     <img id="preview-image-before-upload" class="mt-5" width="150px">
                 </div>
                 <label for="ktp">Foto KTP</label>
-                <input type="file" id="image" class="form-control @error('ktp') is-invalid @enderror" name="ktp" accept="image/*">
+                
+                <input type="file" id="image" class="form-control @error('ktp') is-invalid @enderror" name="ktp" accept="image/*" value="">
                 @error('ktp')
                 <div class="invalid-feedback">
                     {{ $message }}
