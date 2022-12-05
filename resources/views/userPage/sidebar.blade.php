@@ -26,7 +26,7 @@
                with font-awesome or any other icon font library -->
             
           <li class="nav-item">
-                <a href="{{ route('HomePage') }} " class="nav-link {{ ($tittle === "Home Page") ? 'active' : ''}}">
+                <a href="{{ route('home') }} " class="nav-link {{ ($tittle === "Home Page") ? 'active' : ''}}">
                 <i class="bi bi-house-door"></i>
                   <p>
                      Halaman Utama</p>
