@@ -211,7 +211,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (max-width: 991px) {
   .mobile-nav-toggle {
-    display: block;
+    display: block !important;
   }
 
   .navbar ul {
@@ -230,9 +230,9 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 999;
 }
 .navbar-mobile .mobile-nav-toggle {
-  position: absolute;
-  top: 15px;
-  right: 15px;
+  position: absolute !important;
+  top: 15px !important;
+  right: 15px !important;
 }
 .navbar-mobile ul {
   display: block;
