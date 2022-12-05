@@ -43,10 +43,18 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="nomor" class="form-control" name="nomor" placeholder="masukkan nomor HP">
+          <input type="nomor" class="form-control" name="nomor" placeholder="Masukkan nomor HP">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-phone"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" name="alamat" placeholder="Alamat">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-user"></span>
             </div>
           </div>
         </div>
@@ -78,7 +86,7 @@
           </div>
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fa fa-lock"></span>
+              <span class="fa"></span>
             </div>
           </div>
         </div>
