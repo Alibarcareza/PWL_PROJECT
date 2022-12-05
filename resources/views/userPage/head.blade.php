@@ -11,4 +11,3 @@
 <!-- Theme style -->
 <link rel="stylesheet" href="{{ asset('AdminLTE/dist/css/adminlte.min.css') }}">
 
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">

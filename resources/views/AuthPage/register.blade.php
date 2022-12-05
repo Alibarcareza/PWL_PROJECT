@@ -100,7 +100,7 @@
         </div>
       </form>
 
-      <a href="{{ route('LoginPage') }}" class="text-center">Login</a>
+      <a href="{{ route('login') }}" class="text-center">Login</a>
     </div>
     <!-- /.form-box -->
   </div><!-- /.card -->
