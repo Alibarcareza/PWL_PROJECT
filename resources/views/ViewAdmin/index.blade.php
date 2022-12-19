@@ -83,7 +83,7 @@
         <br>
         {{ $dataUser->links() }}
         Jumlah data User : {{ $dataUser->total() }} <br>
-        Data per Halaman : {{ $dataUser->perPage() }} </br>
+        Data per Halaman : {{ $dataUser->perPage() }} <br>
       </div>
       <!-- /.card-body -->
     </div>

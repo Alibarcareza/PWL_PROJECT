@@ -33,6 +33,15 @@
                     @enderror
                 </div>
                 <div class="form-group">
+                    <label for="fotoKTP">fotoKTP</label>
+                    <input type="file" name="fotoKTP" class="form-control @error('fotoKTP') is-invalid @enderror" placeholder="fotoKTP" required >
+                    @error('fotoKTP')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                    @enderror
+                </div>
+                <div class="form-group">
                 <label for="name">Username</label>
                 <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Nama Lengkap" required autofocus>
                 @error('name')

@@ -31,15 +31,19 @@ class AdminController extends Controller
        //melakukan validasi data
        $request->validate([
         'name' => 'required',
-        'email' => ['required', 'email:dns', 'unique:users,email,'],
+        'email' => ['required'],
         'notelp' => ['required', 'numeric', 'unique:users,notelp,'],
         'alamat' => 'required',
         'level' => 'required',
         'password' => 'required',
-        'foto'=>'required',]);
+        'foto'=>'required',
+        'fotoKTP' => 'required',
+    ]);
 
         if($request->file('foto')){
             $image_name = $request->file('foto')->store('image', 'public');
+        } elseif ($request->file('fotoKTP')){
+            $image_name = $request->file('fotoKTP')->store('image', 'public');
         }
 
         $user = new User;
@@ -49,6 +53,8 @@ class AdminController extends Controller
         $user->notelp = $request->get('notelp');
         $user->alamat = $request->get('alamat');
         $user->level = $request->get('level');
+        $fotoKTP = $request->file('fotoKTP')->store('fotoKTP', 'public');
+        $user -> fotoKTP = $fotoKTP;
         $user->password = bcrypt($request->password);
         $user->save();
 
